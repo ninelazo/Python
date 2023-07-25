@@ -1,0 +1,45 @@
+
+******columnas***************
+
+YearWeek = Calendario[Year] & "/" & 
+if (Calendario[WeekNum]<10,"0","") & Calendario[WeekNum]  
+& " (" & Calendario[MonthShort] & ")"
+
+
+****************Medidas***************
+
+horas_perfectas2 = TRUNC(SUM('Consulta1'[Horas empleadas] )) & "h "  &   TRUNC( (SUM('Consulta1'[Horas empleadas])-TRUNC(SUM('Consulta1'[Horas empleadas])))*60) & "min"
+
+Respuestas respondidas en plazo = 100-(sum('Consulta1'[Estado de primera respuesta vencido])/COUNT('Consulta1'[Estado de primera respuesta vencido]))*100
+
+porcentaje tecnico fallo = 
+var a = SUM('group by id tiempos'[Horas abierto])
+var b = DISTINCTCOUNT( 'group by id tiempos'[ID de la solicitud])
+var c = SUM('group by id tiempos'[Horas tecnico])
+var d = a/b
+var e = c/b
+var f = (e/d)*100
+return 
+
+f
+
+Porcentaje tiempo empleado por tecnico = IF([porcentaje tecnico fallo]>100, 100, [porcentaje tecnico fallo])
+
+tiempos tickets = 
+var tiempo_ticket = SUM( 'group by id tiempos'[Horas tecnico])
+var num_tareas = COUNT('group by id tiempos'[ID de la solicitud])
+var tiempo = tiempo_ticket/num_tareas
+return
+TRUNC(tiempo) & "h "  &   TRUNC( (tiempo-TRUNC(tiempo))*60) & "min" 
+
+numero de tareas2 = COUNT('Consulta1'[ID de la solicitud])
+
+numero de tickets = DISTINCTCOUNT('Consulta1'[ID de la solicitud])
+
+kpi resueltos y cerrados = 
+
+var numero_tickets=DISTINCTCOUNT('Consulta1'[ID de la solicitud])
+var tickets_solucionados=CALCULATE(DISTINCTCOUNT('Consulta1'[ID de la solicitud]), OR('Consulta1'[Estado de solicitud]="Cerrado", 'Consulta1'[Estado de solicitud]="Resuelto"))
+
+RETURN
+(tickets_solucionados/numero_tickets)*100

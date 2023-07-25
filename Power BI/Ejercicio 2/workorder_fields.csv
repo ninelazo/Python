@@ -1,0 +1,68 @@
+﻿Grupo solicitud,Proyecto,Tipo de solicitud,udf_char16,udf_char19,workorderid
+,Proyecto 2,Estimación,Producción,Soporte Ferrovial,9072
+,Proyecto 3,Estimación,Producción,Soporte Ferrovial,9069
+,Proyecto 3,Estimación,Producción,Soporte Ferrovial,9143
+,Proyecto 3,Estimación,Producción,Soporte Ferrovial,9325
+Mantenimiento,Proyecto 1,Mantenimiento Diario,Producción,,8853
+Mantenimiento,Proyecto 2,Mantenimiento Diario,Producción,,8854
+Mantenimiento,Proyecto 3,Mantenimiento Diario,Producción,,8976
+Mantenimiento,Proyecto 4,Mantenimiento Diario,Preproducción,Soporte Ferrovial,9149
+Ticketing,Proyecto 1,Incidencia,Producción,,8883
+Ticketing,Proyecto 1,Incidencia,Producción,,8914
+Ticketing,Proyecto 1,Incidencia,Producción,,8992
+Ticketing,Proyecto 1,Incidencia,Producción,,9060
+Ticketing,Proyecto 1,Incidencia,Producción,,9124
+Ticketing,Proyecto 1,Incidencia,Producción,,9172
+Ticketing,Proyecto 1,Incidencia,Producción,David Salguero,8662
+Ticketing,Proyecto 1,Incidencia,Producción,"Gimenez Pedralba, Irene",8654
+Ticketing,Proyecto 1,Incidencia,Producción,"Gimenez Pedralba, Irene",8715
+Ticketing,Proyecto 1,Incidencia,Producción,"Gimenez Pedralba, Irene",8822
+Ticketing,Proyecto 1,Incidencia,Producción,"Gimenez Pedralba, Irene",8882
+Ticketing,Proyecto 1,Incidencia,Producción,"Gimenez Pedralba, Irene",8956
+Ticketing,Proyecto 1,Incidencia,Producción,"Gutierrez Ramos, Jonatan",8953
+Ticketing,Proyecto 1,Incidencia,Producción,Irene,8639
+Ticketing,Proyecto 1,Incidencia,Producción,Irene Gimenez,8631
+Ticketing,Proyecto 1,Incidencia,Producción,Irene Gimenez,8640
+Ticketing,Proyecto 1,Incidencia,Producción,Soporte Ferrovial,8959
+Ticketing,Proyecto 1,Incidencia,Producción,Soporte Ferrovial,9291
+Ticketing,Proyecto 1,Incidencia,Producción,Soporte Ferrovial,9372
+Ticketing,Proyecto 1,Incidencia,Producción,Soporte Ferrovial,9375
+Ticketing,Proyecto 1,Peticion,Producción,,8856
+Ticketing,Proyecto 1,Peticion,Producción,,8892
+Ticketing,Proyecto 1,Peticion,Producción,,9176
+Ticketing,Proyecto 1,Peticion,Producción,"Gimenez Pedralba, Irene",8719
+Ticketing,Proyecto 1,Peticion,Producción,"Gimenez Pedralba, Irene",8823
+Ticketing,Proyecto 1,Peticion,Producción,"Santos Cano, Pedro Antonio",8653
+Ticketing,Proyecto 2,Incidencia,Preproducción,Soporte Ferrovial,9014
+Ticketing,Proyecto 2,Incidencia,Producción,,9024
+Ticketing,Proyecto 2,Incidencia,Producción,,9132
+Ticketing,Proyecto 2,Incidencia,Producción,"Posada Leon, Rodrigo",8771
+Ticketing,Proyecto 2,Incidencia,Producción,"Santos Cano, Pedro Antonio",8727
+Ticketing,Proyecto 2,Incidencia,Producción,Soporte Ferrovial,8973
+Ticketing,Proyecto 2,Incidencia,Producción,Soporte Ferrovial,9001
+Ticketing,Proyecto 2,Peticion,Preproducción,"Posada Leon, Rodrigo",8744
+Ticketing,Proyecto 2,Peticion,Producción,,9027
+Ticketing,Proyecto 2,Peticion,Producción,,9041
+Ticketing,Proyecto 2,Peticion,Producción,,9209
+Ticketing,Proyecto 2,Peticion,Producción,,9309
+Ticketing,Proyecto 2,Peticion,Producción,"Posada Leon, Rodrigo",8693
+Ticketing,Proyecto 2,Peticion,Producción,"Posada Leon, Rodrigo",8729
+Ticketing,Proyecto 2,Peticion,Producción,"Posada Leon, Rodrigo",8872
+Ticketing,Proyecto 3,Incidencia,Preproducción,,9174
+Ticketing,Proyecto 3,Incidencia,Producción,,9002
+Ticketing,Proyecto 3,Incidencia,Producción,,9213
+Ticketing,Proyecto 3,Incidencia,Producción,,9352
+Ticketing,Proyecto 3,Incidencia,Producción,Ana Atance,9327
+Ticketing,Proyecto 3,Incidencia,Producción,Ana Atance del Val,9087
+Ticketing,Proyecto 3,Incidencia,Producción,Soporte Ferrovial,8977
+Ticketing,Proyecto 3,Incidencia,Producción,Soporte Ferrovial,8987
+Ticketing,Proyecto 3,Incidencia,Producción,Soporte Ferrovial,8988
+Ticketing,Proyecto 3,Incidencia,Producción,Soporte Ferrovial,8994
+Ticketing,Proyecto 3,Incidencia,Producción,Soporte Ferrovial,9123
+Ticketing,Proyecto 3,Incidencia,Producción,Soporte Ferrovial,9324
+Ticketing,Proyecto 3,Incidencia,Producción,Soporte Ferrovial,9335
+Ticketing,Proyecto 3,Peticion,Preproducción,Soporte Ferrovial,9134
+Ticketing,Proyecto 3,Peticion,Preproducción,Soporte Ferrovial,9307
+Ticketing,Proyecto 3,Peticion,Producción,,9179
+Ticketing,Proyecto 3,Peticion,Producción,Soporte Ferrovial,9065
+Ticketing,Proyecto 3,Peticion,Producción,Soporte Ferrovial,9140

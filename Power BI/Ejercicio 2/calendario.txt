@@ -1,0 +1,56 @@
+Calendario = 
+VAR StartD = MIN('Consulta1'[FECHA 2])
+VAR EndD = MAX('Consulta1'[FECHA 2])+2 
+return
+GENERATE ( 
+    CALENDAR(StartD,EndD), 
+    VAR actual = [Date]
+    VAR dia = DAY(actual)
+    VAR mesnum =  MONTH (actual)
+    VAR monthname = FORMAT(actual, "MMMM") 
+	VAR monthnameshort = FORMAT(actual,"MMM")
+	VAR mesno2 = FORMAT ( [Date], "MM" )
+    VAR anno =  YEAR (actual)
+	VAR dateint = FORMAT ( [Date], "YYYYMMDD" )
+	VAR YYYYMM = FORMAT(actual, "YYYYMM")
+    VAR daysort = FORMAT(actual, "dd") 
+	VAR dateid = CONCATENATE(CONCATENATE(FORMAT(actual, "dd"),FORMAT(actual, "MM")),anno)
+    VAR wikdei = FORMAT(actual,"dddd")
+	VAR wikdeinamber = WEEKDAY(actual,2) 
+    VAR abrvdiasemana = SWITCH(  WEEKDAY ( [Date] ,2), 1,"L",2,"M",3,"X",4,"J",5,"V",6,"S",7,"D","")
+    VAR q = "Q" & FORMAT(actual,"Q")
+	VAR DisYear = anno = YEAR(NOW())
+	VAR LY = anno = YEAR(NOW()) -1
+    VAR ago = SWITCH( YEAR( TODAY()) , anno, "Present Year", anno+1, "Last Year", "2 years ago or more")
+
+RETURN ROW (
+    "DateAsInteger", dateint
+	,"DateID", dateid
+	,"YearMonthID", YYYYMM
+	,"MonthInCalendar", monthname & " " & anno
+    ,"YearQuarter", anno & "/" & q
+    ,"Day", dia
+    ,"Month", mesnum
+    ,"Year", anno 
+	,"Quarter", q
+    ,"DayOfMonth", daysort
+    ,"WeekDay", wikdei
+    ,"WeekDayShort", abrvdiasemana
+    ,"MonthName" , monthname
+    ,"MonthNo", mesno2
+    ,"MonthShort", monthnameshort
+    ,"WeekDayNo" , wikdeinamber
+    ,"WeekNum", WEEKNUM([Date], 2)
+    ,"WeekStarting" , actual - wikdeinamber +1
+    ,"WeekEnding", actual + (7 - wikdeinamber)
+	,"NaturalYear", IF( year(TODAY()) < anno, "In the Future", ago)
+    
+	,"IsThisYear" ,  DisYear
+	,"IsLastYear" , LY
+    -- DAX for "New Columns":
+	--; "IsThisOrPrevYear";  OR([IsThisYear];[IsLastYear])
+	--; "IsThisMonth"; MAX('Calendar'[YearMonthID]) = 'Calendar'[YearMonthID]
+
+	, "IsWeekEnd" , wikdeinamber >5
+	)
+)
