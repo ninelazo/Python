@@ -1,0 +1,68 @@
+﻿Categoría,Grupo solicitud,ID de la solicitud,Proyecto,Tipo de solicitud
+Desarrollo,Ticketing,8719,Proyecto 1,Peticion
+Desarrollo,Ticketing,8872,Proyecto 2,Peticion
+Desarrollo,Ticketing,9134,Proyecto 3,Peticion
+Desarrollo,Ticketing,9179,Proyecto 3,Peticion
+Desarrollo,Ticketing,9209,Proyecto 2,Peticion
+Desarrollo,Ticketing,9307,Proyecto 3,Peticion
+Error de sistema,Ticketing,8662,Proyecto 1,Incidencia
+Error de sistema,Ticketing,8727,Proyecto 2,Incidencia
+Error de sistema,Ticketing,8882,Proyecto 1,Incidencia
+Error de sistema,Ticketing,8959,Proyecto 1,Incidencia
+Error de sistema,Ticketing,8973,Proyecto 2,Incidencia
+Error de sistema,Ticketing,8977,Proyecto 3,Incidencia
+Error de sistema,Ticketing,8987,Proyecto 3,Incidencia
+Error de sistema,Ticketing,8988,Proyecto 3,Incidencia
+Error de sistema,Ticketing,8994,Proyecto 3,Incidencia
+Error de sistema,Ticketing,9014,Proyecto 2,Incidencia
+Error de sistema,Ticketing,9024,Proyecto 2,Incidencia
+Error de sistema,Ticketing,9123,Proyecto 3,Incidencia
+Error de sistema,Ticketing,9172,Proyecto 1,Incidencia
+Error de sistema,Ticketing,9174,Proyecto 3,Incidencia
+Error de sistema,Ticketing,9213,Proyecto 3,Incidencia
+Error funcional,Ticketing,8631,Proyecto 1,Incidencia
+Error funcional,Ticketing,8640,Proyecto 1,Incidencia
+Error funcional,Ticketing,8654,Proyecto 1,Incidencia
+Error funcional,Ticketing,8715,Proyecto 1,Incidencia
+Error funcional,Ticketing,8771,Proyecto 2,Incidencia
+Error funcional,Ticketing,8822,Proyecto 1,Incidencia
+Error funcional,Ticketing,8883,Proyecto 1,Incidencia
+Error funcional,Ticketing,8914,Proyecto 1,Incidencia
+Error funcional,Ticketing,8953,Proyecto 1,Incidencia
+Error funcional,Ticketing,9060,Proyecto 1,Incidencia
+Error funcional,Ticketing,9087,Proyecto 3,Incidencia
+Error funcional,Ticketing,9124,Proyecto 1,Incidencia
+Error funcional,Ticketing,9132,Proyecto 2,Incidencia
+Error funcional,Ticketing,9291,Proyecto 1,Incidencia
+Error funcional,Ticketing,9324,Proyecto 3,Incidencia
+Error funcional,Ticketing,9335,Proyecto 3,Incidencia
+Error funcional,Ticketing,9352,Proyecto 3,Incidencia
+Error funcional,Ticketing,9372,Proyecto 1,Incidencia
+Error funcional,Ticketing,9375,Proyecto 1,Incidencia
+Otros,Mantenimiento,8853,Proyecto 1,Mantenimiento Diario
+Otros,Mantenimiento,8854,Proyecto 2,Mantenimiento Diario
+Otros,Mantenimiento,8976,Proyecto 3,Mantenimiento Diario
+Otros,Mantenimiento,9149,Proyecto 4,Mantenimiento Diario
+Otros,Ticketing,8693,Proyecto 2,Peticion
+Otros,Ticketing,8892,Proyecto 1,Peticion
+Otros,Ticketing,8992,Proyecto 1,Incidencia
+Otros,Ticketing,9001,Proyecto 2,Incidencia
+Otros,Ticketing,9002,Proyecto 3,Incidencia
+Otros,Ticketing,9327,Proyecto 3,Incidencia
+Paso a producción,Ticketing,8653,Proyecto 1,Peticion
+Paso a producción,Ticketing,8744,Proyecto 2,Peticion
+Paso a producción,Ticketing,9065,Proyecto 3,Peticion
+Solicitud de cambio,Ticketing,8639,Proyecto 1,Incidencia
+Solicitud de cambio,Ticketing,8729,Proyecto 2,Peticion
+Solicitud de cambio,Ticketing,8956,Proyecto 1,Incidencia
+Solicitud de cambio,Ticketing,9027,Proyecto 2,Peticion
+Solicitud de cambio,Ticketing,9041,Proyecto 2,Peticion
+Solicitud de cambio,Ticketing,9140,Proyecto 3,Peticion
+Solicitud de cambio,Ticketing,9176,Proyecto 1,Peticion
+Solicitud de cambio,Ticketing,9309,Proyecto 2,Peticion
+Solicitud de estimación,Ticketing,8823,Proyecto 1,Peticion
+Solicitud de estimación,Ticketing,8856,Proyecto 1,Peticion
+Solicitud de estimación,Ticketing,9069,Proyecto 3,Estimación
+Solicitud de estimación,Ticketing,9072,Proyecto 2,Estimación
+Solicitud de estimación,Ticketing,9143,Proyecto 3,Estimación
+Solicitud de estimación,Ticketing,9325,Proyecto 3,Estimación

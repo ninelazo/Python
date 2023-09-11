@@ -1,0 +1,146 @@
+Ruta de origenes:
+
+https://www.f1-fansite.com/es/resultados-f1/clasificaci%C3%B3n-f1-campeonato-2020/
+https://www.f1-fansite.com/es/resultados-f1/clasificaci%C3%B3n-f1-campeonato-2021/
+https://www.f1-fansite.com/es/resultados-f1/clasificaci%C3%B3n-f1-campeonato-2022/
+
+
+		POWER QUERY
+
+-----------*********2020 F1 World Championship**************----------------
+
+let
+    Source = Web.BrowserContents("https://www.f1-fansite.com/es/resultados-f1/clasificaci%C3%B3n-f1-campeonato-2020/"),
+    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(1)"}, {"Column2", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(2)"}, {"Column3", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(3)"}, {"Column4", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(4)"}, {"Column5", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(5)"}, {"Column6", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(6)"}, {"Column7", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(7)"}}, [RowSelector="TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR"]),
+    #"Promoted Headers" = Table.PromoteHeaders(#"Extracted Table From Html", [PromoteAllScalars=true]),
+    #"Added Custom" = Table.AddColumn(#"Promoted Headers", "Año", each Text.Start( Text.Select([Gran Premio], {"0".."9"}) ,4)),
+    #"Replaced Value" = Table.ReplaceValue(#"Added Custom","701","2020",Replacer.ReplaceText,{"Año"}),
+    #"Added Custom1" = Table.AddColumn(#"Replaced Value", "Fecha GP", each [Fecha] & " de " &[Año]),
+    #"Inserted Parsed Date" = Table.AddColumn(#"Added Custom1", "Parse", each Date.From(DateTimeZone.From([Fecha GP])), type date),
+    #"Removed Columns" = Table.RemoveColumns(#"Inserted Parsed Date",{"Fecha GP", "Fecha"}),
+    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Parse", "Fecha GP"}, {"Hora", "Tiempo"}})
+in
+    #"Renamed Columns"
+
+
+-----------**********2021 F1 World Championship*************----------------
+let
+    Source = Web.BrowserContents("https://www.f1-fansite.com/es/resultados-f1/clasificaci%C3%B3n-f1-campeonato-2021/"),
+    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(1)"}, {"Column2", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(2)"}, {"Column3", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(3)"}, {"Column4", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(4)"}, {"Column5", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(5)"}, {"Column6", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(6)"}, {"Column7", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(7)"}}, [RowSelector="TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR"]),
+    #"Promoted Headers" = Table.PromoteHeaders(#"Extracted Table From Html", [PromoteAllScalars=true]),
+    #"Added Custom" = Table.AddColumn(#"Promoted Headers", "Año", each Text.Start( Text.Select([Gran Premio], {"0".."9"}) ,4)),
+    #"Replaced Value" = Table.ReplaceValue(#"Added Custom","701","2020",Replacer.ReplaceText,{"Año"}),
+    #"Added Custom1" = Table.AddColumn(#"Replaced Value", "Fecha GP", each [Fecha] & " de " &[Año]),
+    #"Inserted Parsed Date" = Table.AddColumn(#"Added Custom1", "Parse", each Date.From(DateTimeZone.From([Fecha GP])), type date),
+    #"Removed Columns" = Table.RemoveColumns(#"Inserted Parsed Date",{"Fecha GP", "Fecha"}),
+    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Parse", "Fecha GP"}, {"Hora", "Tiempo"}})
+in
+    #"Renamed Columns"
+
+-----------***********2022 F1 World Championship************----------------
+let
+    Source = Web.BrowserContents("https://www.f1-fansite.com/es/resultados-f1/clasificaci%C3%B3n-f1-campeonato-2022/"),
+    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(1)"}, {"Column2", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(2)"}, {"Column3", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(3)"}, {"Column4", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(4)"}, {"Column5", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(5)"}, {"Column6", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(6)"}, {"Column7", "TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR > :nth-child(7)"}}, [RowSelector="TABLE.motor-sport-results.msr_season_summary.tablesorter > * > TR"]),
+    #"Promoted Headers" = Table.PromoteHeaders(#"Extracted Table From Html", [PromoteAllScalars=true]),
+    #"Added Custom" = Table.AddColumn(#"Promoted Headers", "Año", each Text.Start( Text.Select([Gran Premio], {"0".."9"}) ,4)),
+    #"Replaced Value" = Table.ReplaceValue(#"Added Custom","701","2020",Replacer.ReplaceText,{"Año"}),
+    #"Added Custom1" = Table.AddColumn(#"Replaced Value", "Fecha GP", each [Fecha] & " de " &[Año]),
+    #"Inserted Parsed Date" = Table.AddColumn(#"Added Custom1", "Parse", each Date.From(DateTimeZone.From([Fecha GP])), type date),
+    #"Removed Columns" = Table.RemoveColumns(#"Inserted Parsed Date",{"Fecha GP", "Fecha"}),
+    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Parse", "Fecha GP"}, {"Hora", "Tiempo"}})
+in
+    #"Renamed Columns"
+
+-----------**********Clasificación de drivers 2020 F1*************----------------
+
+let
+    Source = Web.BrowserContents("https://www.f1-fansite.com/es/resultados-f1/clasificaci%C3%B3n-f1-campeonato-2020/"),
+    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(1)"}, {"Column2", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(2)"}, {"Column3", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(3)"}, {"Column4", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(4)"}, {"Column5", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(5)"}, {"Column6", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(6)"}, {"Column7", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(7)"}, {"Column8", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(8)"}, {"Column9", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(9)"}, {"Column10", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(10)"}, {"Column11", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(11)"}, {"Column12", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(12)"}, {"Column13", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(13)"}, {"Column14", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(14)"}, {"Column15", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(15)"}, {"Column16", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(16)"}, {"Column17", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(17)"}, {"Column18", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(18)"}, {"Column19", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(19)"}, {"Column20", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(20)"}, {"Column21", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(21)"}, {"Column22", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(22)"}, {"Column23", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(23)"}, {"Column24", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(24)"}, {"Column25", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(25)"}}, [RowSelector="TABLE.motor-sport-results.msr_season_driver_results > * > TR"]),
+    #"Promoted Headers" = Table.PromoteHeaders(#"Extracted Table From Html", [PromoteAllScalars=true]),
+    #"Filtered Rows" = Table.SelectRows(#"Promoted Headers", each ([Destornillador] <> null)),
+    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"Column21", "Column22", "Column23", "Column24", "Column25"}),
+    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"PT", "Puntos totales"}}),
+    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Renamed Columns", {"Pos", "Destornillador", "Puntos totales"}, "Attribute", "Value"),
+    #"Renamed Columns1" = Table.RenameColumns(#"Unpivoted Columns",{{"Attribute", "GP"}, {"Value", "Posicion"}}),
+    #"Added Custom" = Table.AddColumn(#"Renamed Columns1", "Año", each 2020)
+in
+    #"Added Custom"
+
+-----------*********Clasificación de drivers 2021 F1*************----------------
+let
+    Source = Web.BrowserContents("https://www.f1-fansite.com/es/resultados-f1/clasificaci%C3%B3n-f1-campeonato-2021/"),
+    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(1)"}, {"Column2", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(2)"}, {"Column3", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(3)"}, {"Column4", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(4)"}, {"Column5", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(5)"}, {"Column6", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(6)"}, {"Column7", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(7)"}, {"Column8", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(8)"}, {"Column9", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(9)"}, {"Column10", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(10)"}, {"Column11", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(11)"}, {"Column12", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(12)"}, {"Column13", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(13)"}, {"Column14", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(14)"}, {"Column15", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(15)"}, {"Column16", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(16)"}, {"Column17", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(17)"}, {"Column18", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(18)"}, {"Column19", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(19)"}, {"Column20", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(20)"}, {"Column21", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(21)"}, {"Column22", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(22)"}, {"Column23", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(23)"}, {"Column24", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(24)"}, {"Column25", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(25)"}}, [RowSelector="TABLE.motor-sport-results.msr_season_driver_results > * > TR"]),
+    #"Promoted Headers" = Table.PromoteHeaders(#"Extracted Table From Html", [PromoteAllScalars=true]),
+    #"Filtered Rows" = Table.SelectRows(#"Promoted Headers", each ([Destornillador] <> null)),
+    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows",{{"PT", "Puntos totales"}}),
+    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Renamed Columns", {"Pos", "Destornillador", "Puntos totales"}, "Attribute", "Value"),
+    #"Renamed Columns1" = Table.RenameColumns(#"Unpivoted Columns",{{"Attribute", "GP"}, {"Value", "Posicion"}}),
+    #"Added Custom" = Table.AddColumn(#"Renamed Columns1", "Año", each 2021)
+in
+    #"Added Custom"
+
+-----------**********Clasificación de drivers 2022 F1*************----------------
+let
+    Source = Web.BrowserContents("https://www.f1-fansite.com/es/resultados-f1/clasificaci%C3%B3n-f1-campeonato-2022/"),
+    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(1)"}, {"Column2", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(2)"}, {"Column3", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(3)"}, {"Column4", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(4)"}, {"Column5", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(5)"}, {"Column6", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(6)"}, {"Column7", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(7)"}, {"Column8", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(8)"}, {"Column9", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(9)"}, {"Column10", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(10)"}, {"Column11", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(11)"}, {"Column12", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(12)"}, {"Column13", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(13)"}, {"Column14", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(14)"}, {"Column15", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(15)"}, {"Column16", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(16)"}, {"Column17", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(17)"}, {"Column18", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(18)"}, {"Column19", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(19)"}, {"Column20", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(20)"}, {"Column21", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(21)"}, {"Column22", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(22)"}, {"Column23", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(23)"}, {"Column24", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(24)"}, {"Column25", "TABLE.motor-sport-results.msr_season_driver_results > * > TR > :nth-child(25)"}}, [RowSelector="TABLE.motor-sport-results.msr_season_driver_results > * > TR"]),
+    #"Promoted Headers" = Table.PromoteHeaders(#"Extracted Table From Html", [PromoteAllScalars=true]),
+    #"Filtered Rows" = Table.SelectRows(#"Promoted Headers", each ([Destornillador] <> null)),
+    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows",{{"PT", "Puntos totales"}}),
+    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Renamed Columns", {"Pos", "Destornillador", "Puntos totales"}, "Attribute", "Value"),
+    #"Renamed Columns1" = Table.RenameColumns(#"Unpivoted Columns",{{"Attribute", "GP"}, {"Value", "Posicion"}}),
+    #"Added Custom" = Table.AddColumn(#"Renamed Columns1", "Año", each 2022)
+in
+    #"Added Custom"
+
+
+
+-----------********combinaciones***************----------------
+
+-----------********F1 World Championship***************----------------
+
+
+let
+    Source = Table.Combine({#"2020 F1 World Championship", #"2021 F1 World Championship", #"2022 F1 World Championship"}),
+    #"Renamed Columns" = Table.RenameColumns(Source,{{"Ganador", "Piloto"}}),
+    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "GP Larg", each [Gran Premio]),
+    #"Replaced Value" = Table.ReplaceValue(#"Added Custom","F1","F One",Replacer.ReplaceText,{"GP Larg"}),
+    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","2020","",Replacer.ReplaceText,{"GP Larg"}),
+    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","2021","",Replacer.ReplaceText,{"GP Larg"}),
+    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","2022","",Replacer.ReplaceText,{"GP Larg"}),
+    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3"," E. Romaña F One GP"," Emilia Romaña F One GP",Replacer.ReplaceText,{"GP Larg"})
+in
+    #"Replaced Value4"
+
+-----------*****Clasificación de drivers F1******************----------------
+let
+    Source = Table.Combine({#"Clasificación de drivers 2020 F1", #"Clasificación de drivers 2021 F1", #"Clasificación de drivers 2022 F1"}),
+    #"Renamed Columns" = Table.RenameColumns(Source,{{"Destornillador", "Piloto"}, {"Pos", "Pos Final"}, {"Posicion", "Pos GP"}}),
+    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Vuelta Rapida", each [Pos GP]),
+    #"Renamed Columns1" = Table.RenameColumns(#"Added Custom",{{"Vuelta Rapida", "Posicion Final"}}),
+    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns1","*","",Replacer.ReplaceText,{"Posicion Final"}),
+    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","DNF","",Replacer.ReplaceText,{"Posicion Final"}),
+    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","DNS","",Replacer.ReplaceText,{"Posicion Final"}),
+    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","DSQ","",Replacer.ReplaceText,{"Posicion Final"}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value3",{{"Posicion Final", Int64.Type}}),
+    #"Added Custom1" = Table.AddColumn(#"Changed Type", "Custom", each Text.Contains( [Pos GP],"*")),
+    #"Renamed Columns2" = Table.RenameColumns(#"Added Custom1",{{"Custom", "Vuelta Rapida"}, {"Posicion Final", "Posicion Carrera"}})
+in
+    #"Renamed Columns2"
+
+-----------***********************----------------
+
+-----------***********************----------------
+	DESKTOP
+
+-----------***********************----------------
+
+-----------***********************----------------
+En la Tabla "Clasificación de drivers F1" crear campo 
+
+Puntos = RELATED(Puntuacion[Puntos])
+-----------***********************----------------
+
+
+-----------***********************----------------
+
+
