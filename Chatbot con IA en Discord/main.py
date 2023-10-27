@@ -61,10 +61,6 @@ async def buscar(ctx, *args):
     )
     respuesta = completion.choices[0].message["content"]
 
-    if len(respuesta) > 300:
-        respuesta = respuesta[:300]
-
-
     #Usamos try, except para tratar de reproducir la respuesta al canal de voz.
     try:
         channel = ctx.message.author.voice.channel
